@@ -4,7 +4,7 @@
         ""
     ],
     "companyName": "Pebble",
-    "longName": "Pebble.js Tutorial 1-2",
+    "longName": "tweet",
     "projectType": "pebblejs",
     "resources": {
         "media": [
@@ -32,12 +32,12 @@
         ]
     },
     "sdkVersion": "3",
-    "shortName": "P.js Tut 1-2",
+    "shortName": "tweet",
     "targetPlatforms": [
         "aplite",
         "basalt"
     ],
-    "uuid": "05102a80-e5e0-45ec-8371-4a63f0f98bb5",
+    "uuid": "34fd26be-5fb8-4ed7-8581-701d04e6ce27",
     "versionCode": 1,
     "versionLabel": "1.0",
     "watchapp": {

@@ -1,21 +1,59 @@
 var UI = require('ui');
-var Vector2 = require('vector2');
+var ajax = require('ajax');
+var Accel = require('ui/accel');
+var Vibe = require('ui/vibe');
 
-// Create the Window
-var window = new UI.Window();
 
-// Create TimeText
-var timeText = new UI.TimeText({
-  position: new Vector2(0, 0),
-  size: new Vector2(144, 30),
-  text: "%H:%M",
-  font: 'bitham-42-bold',
-  color:'white',
-  textAlign: 'center'
+
+var card = new UI.Card({
+  title:'time',
+  subtitle:''
 });
 
-// Add the TimeText
-window.add(timeText);
+card.show();
 
-// Show the Window
-window.show();
+
+
+ var Time = new Date();
+ var hours = Time.getHours();
+ var minutes = Time.getMinutes();
+ var URL = 'http://alltheminutes.com/tweets/' + hours +'/'+ minutes +'.json';
+
+ajax(
+  {
+    url: URL,
+    type: 'json'
+  },
+  function(id_data) {
+    var len = id_data.length;
+    var i =  Math.floor(Math.random() * len);
+    
+    var dataId = id_data[i];
+    
+ 
+ var URL2 = 'http://nodejs-evilqubit.rhcloud.com/' + dataId;   
+     ajax(
+  {
+    url: URL2,
+    type: 'json'
+  },
+  function(tweetsData) {
+   // var len = tweetsData.length;
+   // var i =  Math.floor(Math.random() * len);
+    
+   var dataTweets = tweetsData;
+    //var d = new Date();
+    card.body(dataTweets.text);
+    card.title(dataTweets.user.name);
+    card.subtitle('@' + dataTweets.user.screen_name);
+    
+  }
+);
+  }
+);
+
+Accel.on('tap', function(e) {
+ Vibe.vibrate('long');
+});
+
+Accel.init();
