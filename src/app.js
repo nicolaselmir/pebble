@@ -1,14 +1,14 @@
 var UI = require('ui');
 var ajax = require('ajax');
-var Accel = require('ui/accel');
-var Vibe = require('ui/vibe');
-
+//var Accel = require('ui/accel');
+//var Vibe = require('ui/vibe');
 
 
 var card = new UI.Card({
-  title:'time',
-  subtitle:''
+  title:'time'
+ // subtitle:''
 });
+
 
 card.show();
 
@@ -46,14 +46,9 @@ ajax(
     card.body(dataTweets.text);
     card.title(dataTweets.user.name);
     card.subtitle('@' + dataTweets.user.screen_name);
-    
   }
 );
   }
 );
 
-Accel.on('tap', function(e) {
- Vibe.vibrate('long');
-});
 
-Accel.init();
