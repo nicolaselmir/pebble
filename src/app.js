@@ -90,11 +90,5 @@ card.on('accelTap', function(e) {
   console.log("Okay its working");
 });
 
-
-//static void tick_handler(struct tm *tick_time, TimeUnits units_changed) {
-  // Update things here
-
-//}
-
 Accel.init();
 
