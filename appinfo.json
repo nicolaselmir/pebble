@@ -3,8 +3,8 @@
     "capabilities": [
         ""
     ],
-    "companyName": "Pebble",
-    "longName": "tweet",
+    "companyName": "Nicolas El Mir ",
+    "longName": "Tweetic",
     "projectType": "pebblejs",
     "resources": {
         "media": [
@@ -32,7 +32,7 @@
         ]
     },
     "sdkVersion": "3",
-    "shortName": "tweet",
+    "shortName": "Tweetic",
     "targetPlatforms": [
         "aplite",
         "basalt"
